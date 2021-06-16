@@ -23,4 +23,10 @@
         update user set mg_state=#{state} where id =#{id};
     </update>
 
+    <!--添加用户-->
+    <update id="addUser" parameterType="user">
+        insert into user(username,password,email,mobile)
+        value(#{username},#{password},#{email},#{mobile});
+    </update>
+
 </mapper>

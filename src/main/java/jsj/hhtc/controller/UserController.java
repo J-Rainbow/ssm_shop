@@ -75,4 +75,17 @@ public class UserController {
         jsonObject.put("num",num);
         return jsonObject;
     }
+
+    /**
+     * 添加用户
+     */
+    @ResponseBody
+    @RequestMapping(value ="/addUser",method =RequestMethod.POST )
+    public JSONObject addUser(User user){
+        System.out.println(user+"*********************************");
+        Integer num = userService.addUser(user);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("num",num);
+        return jsonObject;
+    }
 }

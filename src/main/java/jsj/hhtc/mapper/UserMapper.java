@@ -15,4 +15,5 @@ public interface UserMapper {
     Integer userStateChange(@Param("id") Integer id, @Param("state") Boolean state);
 
 
+    Integer addUser(User user);
 }

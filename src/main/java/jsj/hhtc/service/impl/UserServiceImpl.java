@@ -33,4 +33,9 @@ public class UserServiceImpl implements UserService {
     public Integer userStateChange(Integer id, Boolean state) {
         return userMapper.userStateChange(id,state);
     }
+
+    @Override
+    public Integer addUser(User user) {
+        return userMapper.addUser(user);
+    }
 }

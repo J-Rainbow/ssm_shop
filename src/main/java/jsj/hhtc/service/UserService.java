@@ -12,4 +12,6 @@ public interface UserService {
     Integer findNum();
 
     Integer userStateChange(Integer id, Boolean state);
+
+    Integer addUser(User user);
 }
