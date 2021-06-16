@@ -82,8 +82,20 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value ="/addUser",method =RequestMethod.POST )
     public JSONObject addUser(User user){
-        System.out.println(user+"*********************************");
         Integer num = userService.addUser(user);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("num",num);
+        return jsonObject;
+    }
+
+    /**
+     * 删除用户
+     */
+    @ResponseBody
+    @RequestMapping(value ="/deleteUser",method =RequestMethod.POST )
+    public JSONObject deleteUser(Integer id){
+        System.out.println(id+"******************************************");
+        Integer num = userService.deleteUser(id);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("num",num);
         return jsonObject;

@@ -14,4 +14,6 @@ public interface UserService {
     Integer userStateChange(Integer id, Boolean state);
 
     Integer addUser(User user);
+
+    Integer deleteUser(Integer id);
 }

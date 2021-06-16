@@ -16,4 +16,6 @@ public interface UserMapper {
 
 
     Integer addUser(User user);
+
+    Integer deleteUser(Integer id);
 }
