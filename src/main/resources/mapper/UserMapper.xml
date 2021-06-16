@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jsj.hhtc.mapper.UserMapper">
+
+    <!--登录-->
+    <select id="findUser" resultType="user" parameterType="user">
+        SELECT * FROM user WHERE username = #{username} and password=#{password}
+    </select>
+
+    <!--分页查询-->
+    <select id="findAllUser" resultType="user" >
+        SELECT * FROM user limit #{startIndex},#{pageSize}
+    </select>
+
+    <!--计数-->
+    <select id="findNum" resultType="Integer">
+        SELECT count(*) FROM user
+    </select>
+
+    <!--修改用户状态-->
+    <update id="userStateChange">
+        update user set mg_state=#{state} where id =#{id};
+    </update>
+
+</mapper>
