@@ -94,8 +94,34 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value ="/deleteUser",method =RequestMethod.POST )
     public JSONObject deleteUser(Integer id){
-        System.out.println(id+"******************************************");
         Integer num = userService.deleteUser(id);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("num",num);
+        return jsonObject;
+    }
+
+    /**
+     * 根据id查询用户
+     */
+
+    @ResponseBody
+    @RequestMapping(value ="/findUserById",method =RequestMethod.POST )
+    public JSONObject findUserById(Integer id){
+        User user = userService.findUserById(id);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("id", user.getId());
+        jsonObject.put("username", user.getUsername());
+        jsonObject.put("email", user.getEmail());
+        jsonObject.put("mobile", user.getMobile());
+        return jsonObject;
+    }
+    /**
+     * 修改用户
+     */
+    @ResponseBody
+    @RequestMapping(value ="/editUser",method =RequestMethod.POST )
+    public JSONObject editUser(User user){
+        Integer num = userService.editUser(user);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("num",num);
         return jsonObject;

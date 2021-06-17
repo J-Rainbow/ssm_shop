@@ -16,4 +16,8 @@ public interface UserService {
     Integer addUser(User user);
 
     Integer deleteUser(Integer id);
+
+    User findUserById(Integer id);
+
+    Integer editUser(User user);
 }

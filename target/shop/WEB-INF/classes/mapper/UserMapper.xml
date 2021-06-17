@@ -33,4 +33,14 @@
     <delete id="deleteUser" parameterType="Integer">
         delete from user where id=#{id};
     </delete>
+
+    <!--根据id查询用户-->
+    <select id="findUserById" parameterType="Integer" resultType="user">
+        select * from user where id = #{id}
+    </select>
+
+    <!--修改用户-->
+    <update id="editUser" parameterType="user">
+        update user set email=#{email},mobile=#{mobile} where id=#{id};
+    </update>
 </mapper>
