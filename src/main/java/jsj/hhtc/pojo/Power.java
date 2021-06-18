@@ -1,10 +1,13 @@
 package jsj.hhtc.pojo;
 
+import java.util.List;
+
 public class Power {
     private Integer pid;
-    private String name;
+    private String pname;
     private String path;
     private Integer level;
+    private List<Operation> operationList;
 
     public Integer getPid() {
         return pid;
@@ -14,12 +17,12 @@ public class Power {
         this.pid = pid;
     }
 
-    public String getName() {
-        return name;
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
     public String getPath() {
@@ -38,13 +41,22 @@ public class Power {
         this.level = level;
     }
 
+    public List<Operation> getOperationList() {
+        return operationList;
+    }
+
+    public void setOperationList(List<Operation> operationList) {
+        this.operationList = operationList;
+    }
+
     @Override
     public String toString() {
         return "Power{" +
                 "pid=" + pid +
-                ", name='" + name + '\'' +
+                ", pname='" + pname + '\'' +
                 ", path='" + path + '\'' +
                 ", level=" + level +
+                ", operationList=" + operationList +
                 '}';
     }
 }

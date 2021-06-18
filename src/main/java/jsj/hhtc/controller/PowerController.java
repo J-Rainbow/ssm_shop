@@ -31,7 +31,7 @@ public class PowerController {
         JSONObject jsonObject = new JSONObject();
         for (Power p : powerList) {
             jsonObject.put("id", p.getPid());
-            jsonObject.put("name", p.getName());
+            jsonObject.put("name", p.getPname());
             jsonObject.put("path", p.getPath());
             jsonObject.put("level", p.getLevel());
             jsonArray.add(jsonObject);
